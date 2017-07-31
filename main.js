@@ -1,7 +1,4 @@
 
-/*
-  Here is a rough idea for the steps you could take:
-*/
 
 // 1. select and store the elements
 let main = document.querySelector(".resultlist")
