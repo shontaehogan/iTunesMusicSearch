@@ -3,13 +3,13 @@
   Here is a rough idea for the steps you could take:
 */
 
-// 1. First select and store the elements you'll be working with
+// 1. select and store the elements
 let main = document.querySelector(".resultlist")
 let search = document.querySelector(".searchBar")
 let url = "https://itunes.apple.com/search?term="
 // 2. Create your `submit` event for getting the user's search term
 search.addEventListener('keyup', function(e){
-// 3. Create your `fetch` request that is called after a submission
+// 3. Create `fetch` request that is called after a submission
 	let term = search.value
 	fetch(url+term)
 		.then(
@@ -18,7 +18,7 @@ search.addEventListener('keyup', function(e){
 	          console.log(response.status)
 	          return
 	        }
-// 4. Create a way to append the fetch results to your page
+// 4. Create append fetch results
 			response.json().then(function(data) {
 				let htmlstr = ``
 				data.results.forEach(function(data){
@@ -32,7 +32,7 @@ search.addEventListener('keyup', function(e){
      				 </div>
 					`
 				})
-// 5. Create a way to listen for a click that will play the song in the audio play
+// 5. listen for a click that will play the song in the audio play
 				main.innerHTML = htmlstr
 					let albums = document.querySelectorAll('.searchresult a')
 
